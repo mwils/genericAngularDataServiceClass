@@ -20,7 +20,7 @@ import { HttpClient } from '@angular/common/http';
 export class HourService extends GenericDataService{
   constructor(public http: HttpClient) {
     super({
-      baseURL: apiBase,
+      baseURL: 'http://my.api',
       resourceURL: 'user'
     }, http);
 
@@ -30,8 +30,8 @@ export class HourService extends GenericDataService{
 }
 ```
 Provides Methods
-getOne(id)
-getAll()
-create(item)
-update(id, updates)
-destroy(id)
+getOne(id) // This would call GET http://my.api/user/{id}
+getAll() // -> GET http://my.api/users
+create(item) // -> POST http://my.api/user with item as json
+update(id, updates) // -> PUT http://my.api/user/{id} with updates as json
+destroy(id) // -> DELETE http://my.api/user/{id}
