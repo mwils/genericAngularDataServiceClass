@@ -1,12 +1,12 @@
 import { Observable } from "rx";
 
 export class GenericDataService {
-    _http;
-    _baseURL;
-    _resourceURL;
-    _pluralResourceURL;
+    _http: any;
+    _baseURL: string;
+    _resourceURL: string;
+    _pluralResourceURL: string;
 
-    constructor(config, httpLib) {
+    constructor(config: any, httpLib: any) {
         this._http = httpLib;
         this._baseURL = config.baseURL;
         this._resourceURL = config.resourceURL;
@@ -37,7 +37,7 @@ export class GenericDataService {
         return this._pluralResourceURL;
     }
 
-    getOne(id): Observable<any> {
+    getOne(id: string | number): Observable<any> {
         return this._http.get(`${this._baseURL}/${this._resourceURL}/${id}`)
     }
 
@@ -45,7 +45,7 @@ export class GenericDataService {
         return this._http.get(`${this._baseURL}/${this._pluralResourceURL ? this._pluralResourceURL : this._resourceURL + 's'}`)
     }
 
-    create(item): Observable<any> {
+    create(item: string | number): Observable<any> {
         const httpOptions = {
           headers: {
             'Content-Type':  'application/json'
@@ -55,7 +55,7 @@ export class GenericDataService {
         return this._http.post(`${this._baseURL}/${this._resourceURL}`, item, httpOptions);
     }
 
-    update(id, updates): Observable<any> {
+    update(id: string | number, updates: any): Observable<any> {
         const httpOptions = {
           headers: {
             'Content-Type':  'application/json'
@@ -65,7 +65,7 @@ export class GenericDataService {
         return this._http.put(`${this._baseURL}/${this._resourceURL}/${id}`, updates, httpOptions);
     }
 
-    destroy(id): Observable<any> {
+    destroy(id: string | number): Observable<any> {
         return this._http.delete(`${this._baseURL}/${this._resourceURL}/${id}`);
     }
 }

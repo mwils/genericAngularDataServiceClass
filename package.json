@@ -1,13 +1,13 @@
 {
   "name": "angular-simple-data-service",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Provide a simple and extendable data service for front end apps and angular",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "npm test"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
