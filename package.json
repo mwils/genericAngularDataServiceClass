@@ -1,6 +1,6 @@
 {
   "name": "angular-simple-data-service",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Provide a simple and extendable data service for front end apps and angular",
   "main": "index.js",
   "directories": {
