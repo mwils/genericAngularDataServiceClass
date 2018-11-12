@@ -8,7 +8,7 @@ Usage: import GenericDataService and create your service class as an extended cl
 Call super and add the required objects to your constructor
 
 Example:
-```
+```javascript
 import { Injectable } from '@angular/core';
 import { GenericDataService } from 'GenericDataService';
 import { HttpClient } from '@angular/common/http';
@@ -29,9 +29,11 @@ export class HourService extends GenericDataService{
   
 }
 ```
-Provides Methods
-getOne(id) // This would call GET http://my.api/user/{id}
-getAll() // -> GET http://my.api/users
-create(item) // -> POST http://my.api/user with item as json
-update(id, updates) // -> PUT http://my.api/user/{id} with updates as json
-destroy(id) // -> DELETE http://my.api/user/{id}
+
+Now the Hour service will have the following methods
+
+* getOne(id) // This would call GET http://my.api/user/{id}
+* getAll() // -> GET http://my.api/users
+* create(item) // -> POST http://my.api/user with item as json
+* update(id, updates) // -> PUT http://my.api/user/{id} with updates as json
+* destroy(id) // -> DELETE http://my.api/user/{id}
